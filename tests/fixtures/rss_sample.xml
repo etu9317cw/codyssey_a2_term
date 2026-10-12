@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+		<channel>
+			<title>전기신문 - 에너지</title>
+			<link>https://www.electimes.com</link>
+			<description>전기신문</description>
+			<lastBuildDate>2026-10-10 09:46:14</lastBuildDate>
+		<item>
+			<title>테스트 원전 인력 부족 기사</title>
+			<link>https://www.electimes.com/news/articleView.html?idxno=900001</link>
+			<description><![CDATA[원전 일감이 늘고 있다.그러나 인력은 부족하다. 설비용량은 0.3GW 늘었다. 업계는 &apos;대책&apos;을 요구한다.]]></description>
+			<author><![CDATA[홍길동 기자]]></author>
+			<pubDate>2026-10-10 07:00:00</pubDate>
+		</item>
+		<item>
+			<title>테스트 태양광 모듈 수출 기사</title>
+			<link>https://www.electimes.com/news/articleView.html?idxno=900002</link>
+			<description><![CDATA[태양광 모듈 수출이 늘었다.]]></description>
+			<dc:creator>김철수 기자</dc:creator>
+			<pubDate>2026-10-09 15:30:00</pubDate>
+		</item>
+		<item>
+			<title>날짜 없는 기사</title>
+			<link>https://www.electimes.com/news/articleView.html?idxno=900003</link>
+			<description><![CDATA[날짜가 빠진 항목]]></description>
+			<author></author>
+			<pubDate></pubDate>
+		</item>
+		</channel>
+		</rss>
