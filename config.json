@@ -1,0 +1,76 @@
+{
+  "source": {
+    "name": "electimes",
+    "label": "전기신문",
+    "base_url": "https://www.electimes.com",
+    "robots_path": "/robots.txt",
+    "list_path": "/news/articleList.html?sc_sub_section_code={code}&view_type=sm&page={page}",
+    "article_path": "/news/articleView.html?idxno={id}",
+    "rss_feeds": {
+      "energy": {"path": "/rss/S1N41.xml", "section": "에너지"},
+      "carbon": {"path": "/rss/S1N42.xml", "section": "탄소중립"},
+      "economy": {"path": "/rss/S1N43.xml", "section": "전기경제"}
+    },
+    "categories": {
+      "전력": {"code": "S2N98", "section": "에너지", "keywords": ["전력", "한전", "송전", "배전", "전력망", "계통", "SMP", "전기요금"]},
+      "원자력": {"code": "S2N99", "section": "에너지", "keywords": ["원전", "원자력", "SMR", "한수원", "핵융합"]},
+      "오일·가스·화학": {"code": "S2N100", "section": "에너지", "keywords": ["석유", "가스", "LNG", "정유", "유가", "화학"]},
+      "열·집단에너지": {"code": "S2N101", "section": "에너지", "keywords": ["지역난방", "집단에너지", "열병합", "열공급", "한난"]},
+      "태양광": {"code": "S2N105", "section": "탄소중립", "keywords": ["태양광", "태양전지", "태양에너지"]},
+      "풍력": {"code": "S2N106", "section": "탄소중립", "keywords": ["풍력", "해상풍력", "풍력터빈"]},
+      "배터리·ESS": {"code": "S2N107", "section": "탄소중립", "keywords": ["배터리", "ESS", "이차전지", "2차전지", "에너지저장"]},
+      "수소": {"code": "S2N108", "section": "탄소중립", "keywords": ["수소", "연료전지", "암모니아"]},
+      "기후·환경": {"code": "S2N141", "section": "탄소중립", "keywords": ["기후", "탄소", "온실가스", "배출권", "환경"]},
+      "전기차": {"code": "S2N114", "section": "전기경제", "keywords": ["전기차", "EV", "충전기", "충전소", "충전인프라"]}
+    }
+  },
+  "http": {
+    "timeout_sec": 10,
+    "request_delay_sec": 2.0,
+    "max_retries": 2,
+    "retry_backoff_sec": [2, 4],
+    "user_agent": "energy-news-cli/0.1 (student project for news trend analysis; low request rate)"
+  },
+  "fetch": {
+    "default_limit": 10,
+    "default_pages": 1,
+    "since_limit": 50,
+    "since_pages": 5
+  },
+  "clean": {
+    "duplicate_policy": "skip",
+    "min_body_chars": 50,
+    "default_author": "미상",
+    "default_category": "기타"
+  },
+  "ai": {
+    "env": {
+      "api_key": "CODYSSEY_API_KEY",
+      "base_url": "CODYSSEY_BASE_URL",
+      "model": "CODYSSEY_MODEL"
+    },
+    "default_model": "gemini-3-flash",
+    "timeout_sec": 90,
+    "max_attempts": 3,
+    "retry_backoff_sec": [2, 4],
+    "max_body_chars": 4000,
+    "retry_body_chars": 2000,
+    "analyze_max_articles": 40,
+    "analyze_excerpt_chars": 300
+  },
+  "output": {
+    "top_n": 5,
+    "report_format": "md",
+    "export_formats": ["csv", "jsonl", "xlsx"],
+    "list_page_size": 10,
+    "show_body_chars": 500,
+    "chart_fonts": ["Malgun Gothic", "AppleGothic", "NanumGothic"]
+  },
+  "paths": {
+    "db": "data/news.db",
+    "log": "logs/app.log",
+    "charts_dir": "output/charts",
+    "reports_dir": "output/reports",
+    "exports_dir": "output/exports"
+  }
+}
